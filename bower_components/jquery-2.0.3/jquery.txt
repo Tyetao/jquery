@@ -1,0 +1,97 @@
+(function(){
+  (21, 94) 定义一些变量和函数 jquery = function(){};
+  (96, 283) 给jq对象，添加一些属性和方法
+  (285, 347) extend : jq的继承方法
+  (349, 817) jquery.extend() : 扩展一些工具方法
+  (877, 2856) sizzle: 复杂选择器的实现
+  (2880, 3042) callbacks: 回调对象 : 对函数的统一管理
+  (3043, 3183) deferred: 延迟对象 ： 对异步的统管理
+  (3184, 3295) support : 功能检测
+  (3308, 3652) data() : 数据缓存
+  (3653, 3797) queue() : 队列管理
+  (3808, 4299) attr() prop() val() addClass()等 ： 对元素属性的操作
+  (4300, 5182) on() trigger() 时间操作的相关方法
+  (5140, 6057) dom操作 : 添加 删除 获取 包装 dom筛选
+  (6058, 6620) css() : 样式操作
+  (6621, 7854) 提交的数据和ajax() : ajax() load() getJson()  
+  (7855, 8584) animate() : 运动的方法
+  (8585, 8792) offset() : 位置和尺寸的方法
+  (8804, 8821) jq支持模块化的模式
+  (8862) window.jquery = window.$ = jquery;
+})();
+
+(96, 283)
+jquery.fn = jquery.prototype = {
+  jquery: 版本,
+  constructor: 修正指向问题,
+  init(): 初始化和参数管理
+  selector: 存储选择字符串
+  length: this对象的长度
+  toArray(): 转数组
+  get() : 转原生集合
+  pushStack() jq对象的入栈
+  each() : 遍历集合
+  ready() : dom加载的接口
+  slice() : 集合的截取
+  first() : 集合的第一项
+  last() : 集合的最后一项
+  eq() : 集合的指定项
+  map() : 返回新集合
+  end() : 返回集合前一个状态
+  push() : （内部使用）
+  sort() : （内部使用）
+  splice() : （内部使用）
+}
+
+(285, 347)
+jquery.extend = jquery.fn.extend = function(){
+  定义一写变量
+  if(){} 看是不是深拷贝
+  if(){} 看参数正确不
+  if(){} 看是不是插件的情况
+  for(){ 可能有多个对象的情况
+    if(){} 防止循环引用
+    if(){} 深拷贝
+    else if(){} 浅拷贝
+  }
+}
+
+(349, 817)
+jquery.extend({
+  expando: 生成唯一jq字符串（内部使用）
+  noConflict() : 防止冲突
+  isReady : dom是否加载完毕（内部）
+  readyWait : 等待多少文件的计数器（内部）
+  holdReady() : 推迟dom触发
+  ready() : 准备dom触发
+  isFunction() : 是否为函数
+  isArray() : 是否为数组
+  isWindow() : 是否为window
+  isNumeric() : 是否为数字
+  type() : 判断数据类型
+  isPlainObject() : 是否为对象自变量
+  isEmptyObject() : 是否为空的对象
+  error() : 抛出异常
+  parseHTML() : 解析节点
+  parseJSON() : 解析JSON
+  parseXML() : 解析xml
+  noop() : 空函数
+  globalEval() : 全局解析js
+  camelCase() : 转驼峰
+  nodeName() : 是否为指定节点名（内部）
+  each() : 便立集合
+  trim() : 去前后空格
+  makeArray() : 类数组转真数组
+  inArray() : 数组版indexof
+  merge() : 合并数组
+  grep() : 过滤新数组
+  map() : 映射新数组
+  guid() : 唯一的标识符（内部）
+  proxy() : 改this指向
+  access() : 多功能值操作（内部）
+  now() : 当前时间
+  swap() : css交换（内部） 
+})
+
+jQuery.ready.promise = function(){} 检测 dom的异步操作（内部）
+function isArraylike() {} 类似数组的判断（内部）

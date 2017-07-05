@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./index.js"></script>
+  <script>
+    //$.extend()
+    //$.fn.extend()
+
+    //当写一个对象自变量的时候
+
+    //扩展jq工具方法
+    /*$.extend({
+      a:function(){
+        alert(1)
+      },
+      b:function(){
+        alert(2)
+      }
+    })
+
+    //扩展jq实例方法
+    $.fn.extend({
+      a:function(){
+        alert(3)
+      },
+      b:function(){
+        alert(4)
+      }
+    })
+
+    $.a();
+    $.b();
+    $().a();
+    $().b();*/
+
+    // $.extend() -> this -> this.a -> $.a();
+    // $.fn.extend() -> this.fn -> this.a -> $().a();
+
+    //当写多个对象自变量的时候，后面的对象都是扩展到第一个对象身上
+    /*var a = {};
+    $.extend(a, {name: 'hello'}, {age: 20});
+    console.log(a);*/
+
+    //还可以做深拷贝 和 浅拷贝（默认）
+    var a = {};
+    var b = { name: {age: 20} };
+
+    $.extend(true, a, b); //true 深 false 浅
+    a.name.age = 30;
+    alert(b.name.age);
+
+    //jq中拷贝继承
+    //js中 类式继承、原型继承
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

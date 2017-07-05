@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./index.js"></script>
+  <script>
+    //$.parseHTML() $.merge() $.makeArray()
+    $(function(){
+      /*var str = '<li>1</li><li>2</li><script>alert(4)<\/script>';
+      var arr = $.parseHTML(str, document, true);//['li','li','script']
+      $.each(arr, function(i){
+        $('ul').append( arr[i] )
+      })*/
+
+      // var arr = ['a','b'];
+      /*var arr = {
+        0: 'a',
+        1: 'b',
+        length: 2
+      }
+      var arr1 = ['c', 'd'];
+
+      var mergeArr = $.merge(arr, arr1);
+      console.log(mergeArr);*/
+
+      //$.makeArray();第一个参数转数组 第二个参数转json
+      var aDiv = document.getElementsByTagName('div');
+      console.log( $.makeArray( aDiv, {length: 0} ) );
+    })
+  </script>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <ul></ul>
+</body>
+</html>
